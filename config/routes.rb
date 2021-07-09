@@ -5,9 +5,10 @@ Rails.application.routes.draw do
   #articles
   get "/articles", to: "articles#index"
   get "/articles/:id", to: "articles#show"
-  
+
   #users
   get "/users", to: "users#index"
+  get "/users/:id", to: "users#show"
 
   #posts
 end

@@ -3,12 +3,14 @@ Rails.application.routes.draw do
   root "articles#index"
 
   #articles
-  get "/articles", to: "articles#index"
-  get "/articles/:id", to: "articles#show"
+  # get "/articles", to: "articles#index"
+  # get "/articles/:id", to: "articles#show"
+  resources :articles
 
   #users
-  get "/users", to: "users#index"
-  get "/users/:id", to: "users#show"
+  # get "/users", to: "users#index"
+  # get "/users/:id", to: "users#show"
+  resources :users
 
   #posts
 end

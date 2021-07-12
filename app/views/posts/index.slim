@@ -1,0 +1,9 @@
+h1 Posts from #{@user.name}
+
+ul
+  - @posts.each do |post|
+      li: p 
+        strong Title: 
+        | #{post.title} 
+        strong Content: 
+        | #{post.content}

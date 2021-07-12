@@ -4,6 +4,6 @@ ul
   - @posts.each do |post|
       li: p 
         strong Title: 
-        | #{post.title} 
+        = post.title
         strong Content: 
-        | #{post.content}
+        = post.content

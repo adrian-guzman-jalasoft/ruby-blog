@@ -1,0 +1,13 @@
+h2 Add a post
+
+= form_with model: [ @user, @user.posts.build ] do |form|
+  p
+    = form.label :title
+    br
+    = form.text_field :title
+  p
+    = form.label :content 
+    br
+    = form.text_area :content
+  p
+    = form.submit

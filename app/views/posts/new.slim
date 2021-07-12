@@ -4,10 +4,25 @@ h2 Add a post
   p
     = form.label :title
     br
-    = form.text_field :title
+    = form.text_field :title, id: "form__title", :onKeyUp=>"changeSaveButtonState()"
   p
     = form.label :content 
     br
-    = form.text_area :content
+    = form.text_area :content, id: "form__content", :onKeyUp=>"changeSaveButtonState()"
   p
-    = form.submit
+    = form.submit "Save", id: "form__save"
+
+javascript:
+  var title = document.getElementById("form__title");
+  var content = document.getElementById("form__content");
+
+  //Initial state
+  document.getElementById("form__save").disabled = true;
+  
+  function changeSaveButtonState() {
+    if(title.value && content.value) {
+      document.getElementById("form__save").disabled = false;
+      return;
+    }
+    document.getElementById("form__save").disabled = true;
+  }

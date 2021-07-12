@@ -5,12 +5,16 @@ Rails.application.routes.draw do
   #articles
   # get "/articles", to: "articles#index"
   # get "/articles/:id", to: "articles#show"
-  resources :articles
+  resources :articles do
+    resources :comments
+  end
 
   #users
   # get "/users", to: "users#index"
   # get "/users/:id", to: "users#show"
-  resources :users
+  resources :users do
+    resources :posts
+  end
 
   #posts
 end

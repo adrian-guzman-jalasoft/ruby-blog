@@ -55,3 +55,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 #Including slim templates
 gem 'slim'
+
+#Adding bootstrap 4 to the project
+gem 'bootstrap', '~> 4.6.0'
+gem 'jquery-rails'

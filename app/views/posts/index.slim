@@ -1,9 +1,12 @@
-h1 Posts from #{@user.name}
+.container 
+  
+  h1.m-2 
+    | Posts from #{@user.name}
 
-- @posts.each do |post|
-    .row
+  .row
+    - @posts.each do |post|
       .col-sm-6
-        .card
+        .card.my-3
           .card-header
             strong #{post.title}
           .card-body
@@ -11,4 +14,10 @@ h1 Posts from #{@user.name}
               p 
               = post.content
 
-= react_component("HelloWorld", props: { name: "Stranger" }, prerender: false)
+  = react_component("HelloWorld", props: { name: "Stranger" }, prerender: false)
+
+  h1.m-2 
+    | Rendering Posts with React 
+
+  - @posts.each do |post|
+    = react_component("Post", props: { post: post }, prerender: false)

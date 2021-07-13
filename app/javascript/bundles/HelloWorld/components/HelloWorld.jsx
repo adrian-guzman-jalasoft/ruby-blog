@@ -9,12 +9,14 @@ const HelloWorld = (props) => {
       <h3>Hello, {name}!</h3>
       <hr />
       <form>
-        <label htmlFor="name">
-          Say hello to:
-          <input id="name" type="text" value={name} onChange={(e) => setName(e.target.value)} />
-        </label>
+        <div className="form-group">
+          <label htmlFor="name">
+            Say hello to:
+          </label>
+          <input className="form-control" id="name" type="text" value={name} onChange={(e) => setName(e.target.value)} />
+          <small className="form-text text-muted">This is just a simple react component</small>
+        </div>
       </form>
-      <p>This is just a simple react component</p>
     </div>
   );
 };

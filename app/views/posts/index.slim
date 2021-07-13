@@ -1,9 +1,12 @@
 h1 Posts from #{@user.name}
 
-ul
-  - @posts.each do |post|
-      li: p 
-        strong Title: 
-        = post.title
-        strong Content: 
-        = post.content
+- @posts.each do |post|
+    .row
+      .col-sm-6
+        .card
+          .card-header
+            strong #{post.title}
+          .card-body
+            blockquote.blockquote.mb-0
+              p 
+              = post.content

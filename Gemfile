@@ -53,9 +53,12 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-#Including slim templates
+# Including slim templates
 gem 'slim'
 
-#Adding bootstrap 4 to the project
+# Adding bootstrap 4 to the project
 gem 'bootstrap', '~> 4.6.0'
 gem 'jquery-rails'
+
+# Adding react to the project
+gem "react_on_rails", "12.0.4"

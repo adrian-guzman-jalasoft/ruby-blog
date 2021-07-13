@@ -10,3 +10,5 @@ h1 Posts from #{@user.name}
             blockquote.blockquote.mb-0
               p 
               = post.content
+
+= react_component("HelloWorld", props: { name: "Stranger" }, prerender: false)

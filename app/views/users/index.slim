@@ -1,8 +1,9 @@
-h1 Users
+.container.pt-3
+  h1 Users
 
-ul
-  - @users.each do |user|
-    li
-      = link_to "#{user.name}", user_path(user)
+  ul
+    - @users.each do |user|
+      li
+        = link_to "#{user.name}", user_path(user)
 
 

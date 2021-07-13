@@ -10,31 +10,31 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-primary
         span.sr-only
           | (current)
 
-h2 Add a post
+.container.pt-3
 
-= form_with model: [ @user, @user.posts.build ] do |form|
-  p
-    = form.label :title
-    br
-    = form.text_field :title, id: "form__title", :onKeyUp=>"changeSaveButtonState()"
-  p
-    = form.label :content 
-    br
-    = form.text_area :content, id: "form__content", :onKeyUp=>"changeSaveButtonState()"
-  p
-    = form.submit "Save", id: "form__save"
+  h2 Add a post
 
-javascript:
-  var title = document.getElementById("form__title");
-  var content = document.getElementById("form__content");
+  = form_with model: [ @user, @user.posts.build ] do |form|
+    p
+      = form.label :title
+      = form.text_field :title, :class =>"form-control", :onKeyUp => "changeSaveButtonState()"
+    p
+      = form.label :content 
+      = form.text_area :content, :class => "form-control", :onKeyUp => "changeSaveButtonState()"
+    p
+      = form.submit "Save", id: "save"
 
-  //Initial state
-  document.getElementById("form__save").disabled = true;
-  
-  function changeSaveButtonState() {
-    if(title.value && content.value) {
-      document.getElementById("form__save").disabled = false;
-      return;
+  javascript:
+    var title = document.getElementById("post_title")
+    var content = document.getElementById("post_content");
+
+    //Initial state
+    document.getElementById("save").disabled = true;
+    
+    function changeSaveButtonState() {
+      if(title.value && content.value) {
+        document.getElementById("save").disabled = false;
+        return;
+      }
+      document.getElementById("save").disabled = true;
     }
-    document.getElementById("form__save").disabled = true;
-  }

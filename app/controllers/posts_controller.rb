@@ -1,12 +1,9 @@
 class PostsController < ApplicationController
     def index
         @user = User.find(params[:user_id])
-        puts "before conditional"
         @posts = if @user
-            puts "there are posts "
             @user.posts
         end
-        puts "after conditional"
     end
 
     def new

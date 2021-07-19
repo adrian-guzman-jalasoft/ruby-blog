@@ -1,8 +1,14 @@
 class PostsController < ApplicationController
     def index
         @user = User.find(params[:user_id])
-        @posts = if @user
-            @user.posts
+        
+        if @user
+            respond_to do |format|
+                format.json {
+                    render json: @user.posts 
+                }
+                format.html
+            end
         end
     end
 

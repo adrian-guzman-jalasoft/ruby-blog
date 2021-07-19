@@ -1,0 +1,2 @@
+.container 
+  = react_component("PostPage", props: {name: @user.name, posts_path: user_posts_path(@user)}, prerender: false)

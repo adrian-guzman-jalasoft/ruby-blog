@@ -1,21 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
-const Post = (props) => {
 
-    const [post] = useState(props.post);
-
+const PostCard = ({id, title, content}) => {
+    
     return (
         <div className="col-sm-6">
             <div className="card my-3">
                 <div className="card-header">
-                    <strong> {post.title} </strong>
+                    <strong> { title } </strong>
                 </div>
                 <div className="card-body">
-                    {post.content}
+                    { content }
                 </div>
             </div>
         </div>
     )
 }
 
-export default Post;
+export default PostCard;
